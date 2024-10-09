@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/models/ingredients_model.dart';
+import 'package:flutter_app/models/recipe_model.dart';
 
 class RecipeScreen extends StatelessWidget {
-  const RecipeScreen({super.key});
+  RecipeScreen({super.key});
+
+  final RecipeModel recipeModel = RecipeModel(
+    id: "1",
+    name: "Sobremesa",
+    steps: "Unte a forma e cozinhe",
+  );
+
+  final List<IngredientsModel> listIngredients = [
+    IngredientsModel(name: "Farinha de Trigo", amount: 100, unit: "gramas")
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +43,7 @@ class RecipeScreen extends StatelessWidget {
               "Ingredientes",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
-            const Text(
-                "Com esse ingredientes, você prepara um marido gelado."),
+            const Text("Com esse ingredientes, você prepara um marido gelado."),
             const Divider(),
             const Text(
               "Como preparar?",
